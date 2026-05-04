@@ -43,4 +43,16 @@ public class FlightController {
     public ResponseEntity<String> deleteFlight(@PathVariable Long flightId) {
         return ResponseEntity.ok(flightService.deleteFlight(flightId));
     }
+
+    @PutMapping("/{flightId}/seats/{seatNumber}/book")
+    public ResponseEntity<Void> bookSeat(@PathVariable Long flightId, @PathVariable String seatNumber) {
+        flightService.bookSeat(flightId, seatNumber);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/{flightId}/seats/{seatNumber}/release")
+    public ResponseEntity<Void> releaseSeat(@PathVariable Long flightId, @PathVariable String seatNumber) {
+        flightService.releaseSeat(flightId, seatNumber);
+        return ResponseEntity.ok().build();
+    }
 }

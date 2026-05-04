@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1ae6570-1838-4568-aa42-a9e338147af6" name="Changes" comment="" />
+    <list default="true" id="a1ae6570-1838-4568-aa42-a9e338147af6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/Thomson/Downloads/AirSync/discovery-sevice" value="3Cw1kIT007Sz1V4NAdjydpkR0MY" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -43,6 +53,7 @@
     "Spring Boot.DiscoveryServerApplication.executor": "Run",
     "Spring Boot.FlightServiceApplication.executor": "Run",
     "Spring Boot.UserServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Thomson/Downloads/AirSync",
     "project.structure.last.edited": "SDKs",
@@ -67,7 +78,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
-              <entry key="BookingServiceApplication" value="FAILED" />
+              <entry key="BookingServiceApplication" value="STOPPED" />
               <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="DiscoveryServerApplication" value="STOPPED" />
               <entry key="FlightServiceApplication" value="STOPPED" />
@@ -143,6 +154,7 @@
       <updated>1777281962940</updated>
       <workItem from="1777281968144" duration="1048000" />
       <workItem from="1777283502248" duration="10472000" />
+      <workItem from="1777661128626" duration="1351000" />
     </task>
     <servers />
   </component>

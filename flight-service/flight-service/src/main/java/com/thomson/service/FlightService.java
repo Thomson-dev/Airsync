@@ -75,6 +75,35 @@ public class FlightService {
         return "Flight cancelled successfully";
     }
 
+    @Transactional
+    public void bookSeat(Long flightId, String seatNumber) {
+        Seat seat = seatRepository.findByFlightIdAndSeatNumber(flightId, seatNumber)
+                .orElseThrow(() -> new FlightNotFoundException(flightId));
+        if (!seat.getAvailable()) {
+            throw new IllegalStateException("Seat " + seatNumber + " is already booked");
+        }
+        seat.setAvailable(false);
+        seatRepository.save(seat);
+
+        Flight flight = flightRepository.findById(flightId)
+                .orElseThrow(() -> new FlightNotFoundException(flightId));
+        flight.setAvailableSeats(flight.getAvailableSeats() - 1);
+        flightRepository.save(flight);
+    }
+
+    @Transactional
+    public void releaseSeat(Long flightId, String seatNumber) {
+        Seat seat = seatRepository.findByFlightIdAndSeatNumber(flightId, seatNumber)
+                .orElseThrow(() -> new FlightNotFoundException(flightId));
+        seat.setAvailable(true);
+        seatRepository.save(seat);
+
+        Flight flight = flightRepository.findById(flightId)
+                .orElseThrow(() -> new FlightNotFoundException(flightId));
+        flight.setAvailableSeats(flight.getAvailableSeats() + 1);
+        flightRepository.save(flight);
+    }
+
     // Builds all seats in memory first, then saves in one batch instead of one DB call per seat
     private void generateSeats(Flight flight) {
         String[] cols = {"A", "B", "C", "D", "E", "F"};
