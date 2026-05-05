@@ -3,6 +3,7 @@ package com.thomson.bookingservice.controller;
 import com.thomson.bookingservice.dto.BookingRequest;
 import com.thomson.bookingservice.dto.BookingResponse;
 import com.thomson.bookingservice.service.BookingService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +18,13 @@ public class BookingController {
     private final BookingService bookingService;
 
     @PostMapping
-    public ResponseEntity<BookingResponse> createBooking(@RequestBody BookingRequest request) {
+    public ResponseEntity<BookingResponse> createBooking(@Valid @RequestBody BookingRequest request) {
         return ResponseEntity.ok(bookingService.createBooking(request));
+    }
+
+    @PutMapping("/{bookingId}/confirm")
+    public ResponseEntity<BookingResponse> confirmBooking(@PathVariable Long bookingId) {
+        return ResponseEntity.ok(bookingService.confirmBooking(bookingId));
     }
 
     @PutMapping("/{bookingId}/cancel")

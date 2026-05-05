@@ -1,29 +1,29 @@
-package com.thomson.bookingservice.entity;
+package com.thomson.paymentservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "bookings")
+@Table(name = "payments")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Booking {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long bookingId;
     private Long userId;
-    private Long flightId;
-    private String seatNumber;
-    private Double totalPrice;
+    private Double amount;
+    private String email;
+    private String reference;
 
     @Enumerated(EnumType.STRING)
-    private BookingStatus status;
+    private PaymentStatus status;
 
-    private LocalDateTime bookingTime;
-    private LocalDateTime expiresAt;
+    private LocalDateTime createdAt;
 }

@@ -3,15 +3,13 @@ package com.thomson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.thomson.bookingservice.feign")
-@EnableScheduling
-public class BookingServiceApplication {
+@EnableFeignClients(basePackages = "com.thomson.paymentservice.feign")
+public class PaymentServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookingServiceApplication.class, args);
+		SpringApplication.run(PaymentServiceApplication.class, args);
 	}
 
 }
