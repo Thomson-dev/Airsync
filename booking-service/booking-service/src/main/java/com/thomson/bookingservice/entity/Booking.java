@@ -2,10 +2,12 @@ package com.thomson.bookingservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Check;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "bookings")
+@Check(constraints = "status IN ('PENDING', 'CONFIRMED', 'CANCELLED')")
 @Data
 @Builder
 @AllArgsConstructor
